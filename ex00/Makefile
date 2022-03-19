@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/03/20 02:42:36 by cjeon             #+#    #+#              #
+#    Updated: 2022/03/20 02:42:37 by cjeon            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CXX = c++
 CXXFLAGS = -std=c++98 -pedantic -Wall -Wextra -Werror
 CXXDEBUGFLAGS = -fsanitize=address -fsanitize=undefined

@@ -6,12 +6,13 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:46:20 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/20 02:22:39 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/20 02:42:33 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include <iomanip>
+#include <iostream>
+
 #include "Numeric.hpp"
 
 int main(int argc, char *argv[]) {
