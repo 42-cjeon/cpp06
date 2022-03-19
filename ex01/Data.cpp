@@ -6,14 +6,14 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 03:20:17 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/20 03:29:43 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/20 03:35:55 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Data.hpp"
 
 Data *getData(std::string firstname, std::string lastname,
-                     std::string nickname) {
+              std::string nickname) {
   Data *data = new Data;
   data->firstname = new std::string(firstname);
   data->lastname = new std::string(lastname);
