@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++98 -pedantic -Wall -Wextra -Werror
 CXXDEBUGFLAGS = -fsanitize=address -fsanitize=undefined
 
 NAME = convert
-SRCS = main.cpp
+SRCS = main.cpp Numeric.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
