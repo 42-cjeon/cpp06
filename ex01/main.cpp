@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 02:46:50 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/20 03:35:48 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 02:41:37 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,28 @@
 
 #include "Data.hpp"
 
-uintptr_t serialize(Data *data) { return reinterpret_cast<uintptr_t>(data); }
+uintptr_t serialize(Data *data) {
+  uintptr_t *raw = new uintptr_t[4];
 
-Data *deserialize(uintptr_t raw) { return reinterpret_cast<Data *>(raw); }
+  raw[0] = reinterpret_cast<uintptr_t>(data);
+  raw[1] = reinterpret_cast<uintptr_t>(data->firstname);
+  raw[2] = reinterpret_cast<uintptr_t>(data->lastname);
+  raw[3] = reinterpret_cast<uintptr_t>(data->nickname);
+
+  return reinterpret_cast<uintptr_t>(raw);
+}
+
+Data *deserialize(uintptr_t raw) {
+  uintptr_t *raw_ptr = reinterpret_cast<uintptr_t *>(raw);
+
+  Data *data = reinterpret_cast<Data *>(raw_ptr[0]);
+  data->firstname = reinterpret_cast<std::string *>(raw_ptr[1]);
+  data->lastname = reinterpret_cast<std::string *>(raw_ptr[2]);
+  data->nickname = reinterpret_cast<std::string *>(raw_ptr[3]);
+  delete[] raw_ptr;
+
+  return data;
+}
 
 int main(void) {
   Data *data = getData("changmin", "jeon", "cjeon");
